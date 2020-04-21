@@ -9,9 +9,10 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
+Route::post('auth/login', 'admin/Login/index');
 
-Route::group('auth', function () { // 路由前缀
+Route::group('auth', function () {
     Route::group(['ext' => 'php'], function () {
-        Route::get('login', 'admin/Login/index');
+        Route::rule('index', 'admin/Index/index');
     })->middleware('auth');
 });

@@ -24,7 +24,7 @@ class Http extends Handle
             \Log::close(); //关闭日志写入
         } else {
             $this->code = 200;
-            $this->msg = '服务器内部错误';
+            $this->msg = $e->getMessage();
             $this->status = 999;
         }
         $result = [
