@@ -14,5 +14,6 @@ Route::post('auth/login', 'admin/Login/index');
 Route::group('auth', function () {
     Route::group(['ext' => 'php'], function () {
         Route::rule('index', 'admin/Index/index');
+        Route::rule('accout', 'admin/Auth/index');
     })->middleware('auth');
 });
