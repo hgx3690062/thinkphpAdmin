@@ -12,6 +12,13 @@ use think\Request;
 class Auth extends BaseController
 {
 
+    /**
+     * 账户列表
+     * @param Request $request
+     * @return mixed|\think\response\Json
+     * @throws ErrorException
+     * @throws \think\exception\DbException
+     */
     public function index(Request $request)
     {
         if ($request->post()) {
@@ -23,5 +30,10 @@ class Auth extends BaseController
             return json(['code' => 0, 'msg' => '', 'data' => $result['data'], 'count' => $result['total']]);
         }
         return $this->fetch();
+    }
+
+
+    public function accout_add(){
+        return $this->fetch('/auth/accout_add');
     }
 }

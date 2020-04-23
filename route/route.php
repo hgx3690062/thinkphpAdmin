@@ -10,10 +10,13 @@
 // +----------------------------------------------------------------------
 
 Route::post('auth/login', 'admin/Login/index');
+//通用模块
+Route::post('common', 'admin/Common/uploadfile');
 
 Route::group('auth', function () {
     Route::group(['ext' => 'php'], function () {
         Route::rule('index', 'admin/Index/index');
         Route::rule('accout', 'admin/Auth/index');
+        Route::rule('accoutAdd', 'admin/Auth/accout_add');
     })->middleware('auth');
 });
